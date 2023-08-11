@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306
+    username: excel_file_handling
+    password: 123456789
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    static-path-pattern: /static/**
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
