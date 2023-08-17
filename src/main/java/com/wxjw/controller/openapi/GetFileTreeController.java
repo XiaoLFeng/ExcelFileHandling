@@ -1,15 +1,15 @@
 package com.wxjw.controller.openapi;
 
-import com.wxjw.common.Result;
+import com.wxjw.common.BaseResponse;
+import com.wxjw.common.ResultUtil;
 import com.wxjw.dal.dao.ExcelInfoMapper;
+import com.wxjw.dal.pojo.ErrorCode;
+import com.wxjw.dal.pojo.data.getFileTree.GetFileTreeResultBody;
 import com.wxjw.service.GetFileTreeService;
 import jakarta.annotation.Resource;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Controller 获取文件树
@@ -24,14 +24,11 @@ public class GetFileTreeController {
     ExcelInfoMapper excelInfoMapper;
 
     @PostMapping("/files/tree")
-    public ResponseEntity<Result<Object>> getFileTree(@RequestBody @NotNull HashMap<String, String> resultBody) {
-        String getResult = resultBody.get("action");
-        if ("getfiletree".equals(getResult)) {
-            return ResponseEntity.ok()
-                    .body(new GetFileTreeService().getFileTreeService(excelInfoMapper));
+    public ResponseEntity<BaseResponse<Object>> getFileTree(@RequestBody @NotNull GetFileTreeResultBody resultBody) {
+        if ("getfiletree".equals(resultBody.getAction())) {
+            return new GetFileTreeService().getFileTreeService(excelInfoMapper);
         } else {
-            return ResponseEntity.badRequest()
-                    .body(new Result<>(403, null, "参数错误"));
+            return ResultUtil.error(ErrorCode.PARAMETER_ERROR);
         }
     }
 }
