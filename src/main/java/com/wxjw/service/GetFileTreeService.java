@@ -4,7 +4,7 @@ import com.wxjw.common.BaseResponse;
 import com.wxjw.common.ResultUtil;
 import com.wxjw.dal.dao.ExcelInfoMapper;
 import com.wxjw.dal.pojo.ErrorCode;
-import com.wxjw.dal.pojo.data.getFileTree.GetFileTreeData;
+import com.wxjw.dal.pojo.data.GetFileTree.GetFileTreeData;
 import com.wxjw.dal.pojo.entity.ExcelInfoEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

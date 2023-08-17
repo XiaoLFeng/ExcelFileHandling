@@ -1,9 +1,8 @@
-package com.wxjw.dal.pojo.data.getFileTree;
+package com.wxjw.dal.pojo.data.GetFileTree;
 
 import com.wxjw.dal.dao.ExcelInfoMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.ToString;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

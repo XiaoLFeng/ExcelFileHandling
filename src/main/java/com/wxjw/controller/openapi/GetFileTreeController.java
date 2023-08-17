@@ -4,7 +4,7 @@ import com.wxjw.common.BaseResponse;
 import com.wxjw.common.ResultUtil;
 import com.wxjw.dal.dao.ExcelInfoMapper;
 import com.wxjw.dal.pojo.ErrorCode;
-import com.wxjw.dal.pojo.data.getFileTree.GetFileTreeResultBody;
+import com.wxjw.dal.pojo.data.GetFileTree.GetFileTreeResultBody;
 import com.wxjw.service.GetFileTreeService;
 import jakarta.annotation.Resource;
 import org.jetbrains.annotations.NotNull;

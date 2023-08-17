@@ -1,4 +1,4 @@
-package com.wxjw.dal.pojo.data.getFileTree;
+package com.wxjw.dal.pojo.data.GetFileTree;
 
 import lombok.Getter;
 
