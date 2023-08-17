@@ -27,8 +27,6 @@ public class GetUploadFileService {
     private final ExcelInfoMapper excelInfoMapper;
     @Getter
     private ResponseEntity<BaseResponse<Object>> returnResult;
-    @Getter
-    private boolean checkType;
 
     public GetUploadFileService(ExcelInfoMapper excelInfoMapper) {
         this.excelInfoMapper = excelInfoMapper;

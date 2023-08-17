@@ -35,6 +35,14 @@ public interface ExcelInfoMapper {
     @Select("SELECT * FROM excel_file_handling.excel_info WHERE file_name = #{fileName}")
     List<ExcelInfoEntity> getAllExcelFilesNameNoRepetition(String fileName);
 
+
+    /**
+     * @param id 序号
+     * @return 返回单条数据
+     */
+    @Select("SELECT * FROM excel_file_handling.excel_info WHERE id = #{id}")
+    ExcelInfoEntity getExcelForId(int id);
+
     /**
      * @param excelInfoEntity excel
      * @return 是否插入成功

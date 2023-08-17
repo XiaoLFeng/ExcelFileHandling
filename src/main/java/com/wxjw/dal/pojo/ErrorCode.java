@@ -17,7 +17,8 @@ public enum ErrorCode {
     DATA_WRITE_FAILURE("DataWriteFailure", 40013, "数据写入失败", HttpCode.BAD_REQUEST),
     FILE_TYPE_IS_INCORRECT("FileTypeIncorrect", 40014, "文件类型错误", HttpCode.BAD_REQUEST),
     FILE_CREATION_FAILED("FileCreationFailed", 40015, "文件创建失败", HttpCode.BAD_REQUEST),
-    FILE_ALREADY_EXISTS("FileAlreadyExists", 40016, "文件已经存在", HttpCode.BAD_REQUEST);
+    FILE_ALREADY_EXISTS("FileAlreadyExists", 40016, "文件已经存在", HttpCode.BAD_REQUEST),
+    THERE_IS_NO_SUCH_RECORD("ThereIsNoSuchRecord", 40017, "记录不存在", HttpCode.BAD_REQUEST);
 
     private final String output;
     private final int code;
