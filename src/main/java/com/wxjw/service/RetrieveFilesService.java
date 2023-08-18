@@ -126,7 +126,7 @@ public class RetrieveFilesService {
                     // 数据库写入
                     excelInfoMapper.insertExcelInfo(excelInfoEntity);
                     // 返回结果
-                    returnResult = ResultUtil.success();
+                    returnResult = new GetFileTreeService().getFileTreeService(excelInfoMapper);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
