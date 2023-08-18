@@ -5,7 +5,7 @@ import com.wxjw.common.ResultUtil;
 import com.wxjw.dal.dao.ExcelInfoMapper;
 import com.wxjw.dal.pojo.ErrorCode;
 import com.wxjw.dal.pojo.data.DeleteFile.DeleteFileData;
-import com.wxjw.dal.pojo.entity.ExcelInfoEntity;
+import com.wxjw.service.DeleteFileService;
 import jakarta.annotation.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +28,9 @@ public class DeleteFileController {
     @PostMapping("/file")
     public ResponseEntity<BaseResponse<Object>> deleteFile(@RequestBody DeleteFileData requestBody) {
         if ("deletefile".equals(requestBody.getAction())) {
-            return d;
+            DeleteFileService deleteFileService = new DeleteFileService(excelInfoMapper);
+            deleteFileService.deleteFile(requestBody);
+            return deleteFileService.getReturnResult();
         } else {
             return ResultUtil.error(ErrorCode.PARAMETER_ERROR);
         }

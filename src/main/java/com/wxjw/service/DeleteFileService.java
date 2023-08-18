@@ -31,8 +31,11 @@ public class DeleteFileService {
         ExcelInfoEntity excelInfo = excelInfoMapper.getExcelForId(requestBody.getNodeId());
         if (excelInfo != null && excelInfo.getId() != null) {
             // 查找到数据执行删除
-            excelInfoMapper.deleteExcelForId(excelInfo.getId());
-            returnResult = ResultUtil.success("删除成功");
+            if (excelInfoMapper.deleteExcelForId(excelInfo.getId())) {
+                returnResult = ResultUtil.success("删除成功");
+            } else {
+                returnResult = ResultUtil.error(ErrorCode.DATA_DELETE_FAILURE);
+            }
         } else {
             returnResult = ResultUtil.error(ErrorCode.DATA_IS_EMPTY);
         }

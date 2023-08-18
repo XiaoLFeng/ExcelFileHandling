@@ -15,6 +15,7 @@ public enum ErrorCode {
     PARAMETER_ERROR("ParameterError", 40011, "参数错误", HttpCode.BAD_REQUEST),
     DATA_DUPLICATION("DataDuplication", 40012, "数据重复", HttpCode.BAD_REQUEST),
     DATA_WRITE_FAILURE("DataWriteFailure", 40013, "数据写入失败", HttpCode.BAD_REQUEST),
+    DATA_DELETE_FAILURE("DataDeleteFailure", 40014, "数据删除失败", HttpCode.BAD_REQUEST),
     FILE_TYPE_IS_INCORRECT("FileTypeIncorrect", 40014, "文件类型错误", HttpCode.BAD_REQUEST),
     FILE_CREATION_FAILED("FileCreationFailed", 40015, "文件创建失败", HttpCode.BAD_REQUEST),
     FILE_ALREADY_EXISTS("FileAlreadyExists", 40016, "文件已经存在", HttpCode.BAD_REQUEST),
