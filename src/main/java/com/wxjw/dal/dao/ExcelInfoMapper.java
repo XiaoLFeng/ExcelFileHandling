@@ -1,6 +1,7 @@
 package com.wxjw.dal.dao;
 
 import com.wxjw.dal.pojo.entity.ExcelInfoEntity;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -42,6 +43,13 @@ public interface ExcelInfoMapper {
      */
     @Select("SELECT * FROM excel_file_handling.excel_info WHERE id = #{id}")
     ExcelInfoEntity getExcelForId(int id);
+
+    /**
+     * @param id 序号
+     * @return 是否删除成功
+     */
+    @Delete("DELETE FROM excel_file_handling.excel_info WHERE id = #{id}")
+    boolean deleteExcelForId(int id);
 
     /**
      * @param excelInfoEntity excel
