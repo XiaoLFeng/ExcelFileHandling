@@ -1,10 +1,7 @@
 package com.wxjw.dal.dao;
 
 import com.wxjw.dal.pojo.entity.ExcelInfoEntity;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.context.annotation.ComponentScan;
 
 import java.util.List;
@@ -50,6 +47,9 @@ public interface ExcelInfoMapper {
      */
     @Delete("DELETE FROM excel_file_handling.excel_info WHERE id = #{id}")
     boolean deleteExcelForId(int id);
+
+    @Update("UPDATE excel_file_handling.excel_info SET file_name = #{fileName}, sheet_name = #{sheetName}, table_name = #{tableName}, type = #{type}, create_by = #{createBy}, create_time = #{createTime}, update_by = #{updateBy}, update_time = #{updateTime} WHERE id = #{id}")
+    boolean updateExcelInfo(ExcelInfoEntity excelInfoEntity);
 
     /**
      * @param excelInfoEntity excel
