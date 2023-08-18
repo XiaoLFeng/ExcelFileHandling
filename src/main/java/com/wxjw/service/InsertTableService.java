@@ -4,10 +4,9 @@ import com.wxjw.common.BaseResponse;
 import com.wxjw.common.ResultUtil;
 import com.wxjw.dal.dao.ExcelInfoMapper;
 import com.wxjw.dal.pojo.ErrorCode;
-import com.wxjw.dal.pojo.data.insertTable.InsertTableData;
+import com.wxjw.dal.pojo.data.RetrieveFiles.InsertTableData;
 import com.wxjw.dal.pojo.entity.ExcelInfoEntity;
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 

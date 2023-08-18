@@ -1,4 +1,4 @@
-package com.wxjw.dal.pojo.data.insertTable;
+package com.wxjw.dal.pojo.data.RetrieveFiles;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

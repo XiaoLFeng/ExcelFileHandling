@@ -5,7 +5,7 @@ import com.wxjw.common.BaseResponse;
 import com.wxjw.common.ResultUtil;
 import com.wxjw.dal.dao.ExcelInfoMapper;
 import com.wxjw.dal.pojo.ErrorCode;
-import com.wxjw.dal.pojo.data.insertTable.InsertTableData;
+import com.wxjw.dal.pojo.data.RetrieveFiles.InsertTableData;
 import com.wxjw.service.InsertTableService;
 import jakarta.annotation.Resource;
 import org.jetbrains.annotations.NotNull;
