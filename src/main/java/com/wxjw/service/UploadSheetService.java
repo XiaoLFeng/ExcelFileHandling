@@ -104,14 +104,17 @@ public class UploadSheetService {
             // 数据修改
             ExcelInfoEntity excelInfoUpdate = new ExcelInfoEntity();
             excelInfoUpdate
+                    .setId(excelInfo.getId())
                     .setFileName(excelInfo.getFileName())
                     .setSheetName(excelInfo.getSheetName())
+                    .setTableName(excelInfo.getTableName())
                     .setType(excelInfo.getType())
                     .setCreateBy(excelInfo.getCreateBy())
                     .setParentId(excelInfo.getParentId())
-                    .setUpdateBy(excelInfo.getUpdateBy())
+                    .setUpdateBy(excelInfo.getCreateBy())
                     .setCreateTime(excelInfo.getCreateTime())
-                    .setUpdateBy(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+                    .setCreateBy(excelInfo.getCreateBy())
+                    .setUpdateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
             if (excelInfoMapper.updateExcelInfo(excelInfoUpdate)) {
                 returnResult = ResultUtil.success();
             } else {
