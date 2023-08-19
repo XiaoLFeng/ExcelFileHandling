@@ -42,12 +42,23 @@ public interface ExcelInfoMapper {
     ExcelInfoEntity getExcelForId(int id);
 
     /**
+     * @param ids String类型多个id
+     * @return 返回类型内容
+     */
+    @Select("SELECT * FROM excel_file_handling.excel_info WHERE id IN (${ids})")
+    List<ExcelInfoEntity> getExcelForIds(String ids);
+
+    /**
      * @param id 序号
      * @return 是否删除成功
      */
     @Delete("DELETE FROM excel_file_handling.excel_info WHERE id = #{id}")
     boolean deleteExcelForId(int id);
 
+    /**
+     * @param excelInfoEntity Excel自定义实体类
+     * @return 是否更新成功
+     */
     @Update("UPDATE excel_file_handling.excel_info SET file_name = #{fileName}, sheet_name = #{sheetName}, table_name = #{tableName}, type = #{type}, create_by = #{createBy}, create_time = #{createTime}, update_by = #{updateBy}, update_time = #{updateTime} WHERE id = #{id}")
     boolean updateExcelInfo(ExcelInfoEntity excelInfoEntity);
 
