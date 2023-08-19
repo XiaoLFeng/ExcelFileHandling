@@ -67,8 +67,6 @@ public class GetSheetService {
                     Cell cell = iterator.next();
                     title = (title == null || title.isEmpty() ? new StringBuilder() : title).append(cell.toString());
                 }
-                // 获取 Header
-                Iterator<Cell> headerRow = getEntitySheet.getRow(1).cellIterator();
                 // 获取总行数
                 ArrayList<ArrayList<Object>> line = new ArrayList<>();
                 String[] rowMax = new String[getEntitySheet.getRow(1).getPhysicalNumberOfCells()];

@@ -7,6 +7,7 @@ import com.wxjw.dal.pojo.ErrorCode;
 import com.wxjw.dal.pojo.data.RetrieveFiles.InsertTableData;
 import com.wxjw.dal.pojo.entity.ExcelInfoEntity;
 import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +27,7 @@ public class InsertTableService {
     @Getter
     private String validationErrorMessage = null;
 
-    public void insertLogic(InsertTableData resultBody, ExcelInfoMapper excelInfoMapper) {
+    public void insertLogic(@NotNull InsertTableData resultBody, @NotNull ExcelInfoMapper excelInfoMapper) {
         // 搜索数据是否存在
         ArrayList<ExcelInfoEntity> excelInfoList = (ArrayList<ExcelInfoEntity>) excelInfoMapper.getAllExcelFilesNameNoRepetition(resultBody.getFile_name());
         if (!excelInfoList.isEmpty()) {

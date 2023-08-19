@@ -112,8 +112,11 @@ public class UploadSheetService {
                     .setUpdateBy(excelInfo.getUpdateBy())
                     .setCreateTime(excelInfo.getCreateTime())
                     .setUpdateBy(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-            excelInfoMapper.updateExcelInfo(excelInfoUpdate);
-            returnResult = ResultUtil.success();
+            if (excelInfoMapper.updateExcelInfo(excelInfoUpdate)) {
+                returnResult = ResultUtil.success();
+            } else {
+                returnResult = ResultUtil.error(ErrorCode.DATA_UPDATE_FAILURE);
+            }
         } else {
             returnResult = ResultUtil.error(ErrorCode.DATA_IS_EMPTY);
         }
